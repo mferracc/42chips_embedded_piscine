@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <util/delay.h>
 
 int main() {
 
@@ -6,8 +7,10 @@ int main() {
   while (1) {
     if (!(PIND & (1 << PD2))) {
       PORTB |= (1 << PB0); // turn on PB0
+      _delay_ms(50);
      } else {
        PORTB &= ~(1 << PB0); // turn off PB0
+       _delay_ms(50);
      }
   }
   return 0;
