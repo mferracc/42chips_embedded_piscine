@@ -1,6 +1,7 @@
 F_CPU = 115200
 MCU = atmega328p
-PORT = /dev/ttyUSB0
+#PORT = /dev/ttyUSB0
+PORT = /dev/tty.usbserial*
 
 CC = avr-gcc
 C_FLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Wall -Os
