@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <util/delay.h>
 
 int main() {
 
@@ -15,6 +16,7 @@ int main() {
 
          if (prev_button_state && !current_button_state) {
             PORTB ^= (1 << PB0); // Toggle the state of PB0
+            _delay_ms(50);
          }
          prev_button_state = current_button_state;
     }
